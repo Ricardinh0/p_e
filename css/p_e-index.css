@@ -1,0 +1,15 @@
+/* CSS Document */
+BODY{
+	margin:0;
+	padding:0;
+	background:#fafafa;
+}
+
+.p_e-wrap{
+	width:200px;
+	margin:20px auto 0;
+}
+
+#p_e{
+	background:#fefefe;
+}
