@@ -1,6 +1,10 @@
-/*
-*	My Physics Engine
+/*	
+*	JavaScript Document Developed by Richard Coulson 01st May 2013 - www.3stepsforward.co.uk
+*	Please do not remove any comment if you reuse this code and credit Richard Coulson. 
+*	This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike
+*	3.0 Unported License - http://creativecommons.org/licenses/by-nc-sa/3.0/
 */
+
 function P_E(){
 
 	this.config = this.config || {
@@ -16,7 +20,7 @@ function P_E(){
 							[1,0,.8],	//Right
 							[0,-1,.8],	//Top
 							[-1,0,.8],	//Left
-							[0,1,.8]		//Bottom
+							[0,1,.8]	//Bottom
 						]
 	}
 	
@@ -94,7 +98,7 @@ P_E.prototype = {
 				body.vx += G[0]*t;
 				/*
 				*	Reflection Vector:
-				*		- Particle's velocity - 2 * Current Plane's X normal * Normal velocity		
+				*		- Particle's velocity - Restitution * Current Plane's X normal * Normal velocity		
 				*		- V - 2 * N * NV
 				*/
 				body.vx -= e*n[0]*nv;
@@ -104,7 +108,7 @@ P_E.prototype = {
 				body.vy += G[1]*t;
 				/*
 				*	Reflection Vector:
-				*		- Particle's velocity - 2 * Current Plane's Y normal * Normal velocity		
+				*		- Particle's velocity - Restitution * Current Plane's Y normal * Normal velocity		
 				*		- V - 2 * N * NV
 				*/
 				body.vy -= e*n[1]*nv;
@@ -114,8 +118,8 @@ P_E.prototype = {
 				body.vx += G[0]*t;
 				/*
 				*	Reflection Vector:
-				*		- Particle's velocity - 2 * Current Plane's X normal * Normal velocity		
-				*		- V - 2 * N * NV
+				*		- Particle's velocity - Restitution * Current Plane's X normal * Normal velocity		
+				*		- V - E * N * NV
 				*/
 				body.vx -= e*n[0]*nv;
 			}
@@ -124,7 +128,7 @@ P_E.prototype = {
 				body.vy += G[1]*t;
 				/*
 				*	Reflection Vector:
-				*		- Particle's velocity - 2 * Current Plane's Y normal * Normal velocity		
+				*		- Particle's velocity - Restitution * Current Plane's Y normal * Normal velocity		
 				*		- V - 2 * N * NV
 				*/
 				body.vy -= e*n[1]*nv;
